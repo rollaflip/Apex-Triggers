@@ -1,0 +1,9 @@
+public class GoldDealUpdate {
+    public static void updateHandler(Opportunity[] opps){
+        for(Opportunity opp: opps){
+            if(opp.Amount >= 200000 && opp.StageName != 'Closed Won' && opp.StageName != 'Closed Lost'){
+                opp.Gold_Deal__c = True;
+            }
+        }
+    }
+}
