@@ -1,0 +1,8 @@
+trigger GoldDeal on Opportunity (before insert, before update) {
+	if (Trigger.isInsert || Trigger.isUpdate) {
+        if (Trigger.isBefore) {
+            // Process before insert
+            GoldDealUpdate.updateHandler(Trigger.new);
+        }
+	}
+}
